@@ -9,7 +9,13 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(fileUpload());
-
+app.get("/", (req, res) => {
+  res.json({
+    data: req.headers,
+    msg: "welcome to server on " + PORT,
+    env: process.env,
+  });
+});
 app.use("/upload", routes.upload);
 app.use("/uploads", routes.upload);
 app.use("/toc", routes.toc);
