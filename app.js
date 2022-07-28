@@ -11,7 +11,6 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(fileUpload());
 app.get("/", (req, res) => {
   res.json({
-    data: req.headers,
     msg: "welcome to server on " + PORT,
   });
 });
