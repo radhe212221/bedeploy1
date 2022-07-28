@@ -13,7 +13,6 @@ app.get("/", (req, res) => {
   res.json({
     data: req.headers,
     msg: "welcome to server on " + PORT,
-    env: process.env,
   });
 });
 app.use("/upload", routes.upload);
